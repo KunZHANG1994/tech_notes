@@ -1,2 +1,3 @@
-# Linux_ubuntu_commom_command_notes
-recording ubuntu normal command
+# Recording some shit during my exploring
+- Ubuntu common commands
+- Complie OpenCV with GPU
