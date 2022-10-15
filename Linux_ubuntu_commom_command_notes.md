@@ -51,8 +51,10 @@ The second command brings up a terminal interface in which you can configure the
 After that navigate to Cryptographic API > Certificates for signature checking (at the very bottom of the list) > Provide system-wide ring of trusted keys > Additional X.509 keys for default system keyring
 
 Remove the “debian/canonical-certs.pem” from the prompt and press Ok. Save this configuration to .config and exit the TUI.
-
-
+```
+sudo gedit .config
+```
+remove CONFIG_MODULE_SIG_ALL,CONFIG_MODULE_SIG_KEYCONFIG_SYSTEM_TRUSTED_KEYS,CONFIG_DEBUG_INFO=y
 ```
 make -j$(nproc) deb-pkg
 sudo dpkg -i ../linux-headers-*.deb ../linux-image-*.deb
