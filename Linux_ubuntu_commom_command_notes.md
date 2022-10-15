@@ -23,13 +23,13 @@ Kernel:https://mirrors.edge.kernel.org/pub/linux/kernel/
 
 RT patch: https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/
 
-For Ubuntu 20.04 tested with the kernel version 5.9.1:
+For Ubuntu 20.04 tested with the kernel version 5.15.2:
 
 ```
-curl -SLO https://www.kernel.org/pub/linux/kernel/v5.x/linux-5.9.1.tar.xz
-curl -SLO https://www.kernel.org/pub/linux/kernel/v5.x/linux-5.9.1.tar.sign
-curl -SLO https://www.kernel.org/pub/linux/kernel/projects/rt/5.9/patch-5.9.1-rt20.patch.xz
-curl -SLO https://www.kernel.org/pub/linux/kernel/projects/rt/5.9/patch-5.9.1-rt20.patch.sign
+curl -SLO https://www.kernel.org/pub/linux/kernel/v5.x/linux-5.15.2.tar.xz
+curl -SLO https://www.kernel.org/pub/linux/kernel/v5.x/linux-5.15.2.tar.sign
+curl -SLO https://www.kernel.org/pub/linux/kernel/projects/rt/5.15/patch-5.15.2-rt20.patch.xz
+curl -SLO https://www.kernel.org/pub/linux/kernel/projects/rt/5.15/patch-5.15.2-rt20.patch.sign
 ```
 Install the necessary dependencies:
 ```
@@ -48,13 +48,12 @@ make menuconfig
 ```
 The second command brings up a terminal interface in which you can configure the preemption model. Navigate with the arrow keys to General Setup > Preemption Model and select Fully Preemptible Kernel (Real-Time).
 
-After that navigate to Cryptographic API > Certificates for signature checking (at the very bottom of the list) > Provide system-wide ring of trusted keys > Additional X.509 keys for default system keyring
 
-Remove the “debian/canonical-certs.pem” from the prompt and press Ok. Save this configuration to .config and exit the TUI.
 ```
-sudo gedit .config
+scripts/config --disable SYSTEM_REVOCATION_KEYS
+scripts/config --disable SYSTEM_TRUSTED_KEYS
+
 ```
-remove CONFIG_MODULE_SIG_ALL,CONFIG_MODULE_SIG_KEYCONFIG_SYSTEM_TRUSTED_KEYS,CONFIG_DEBUG_INFO=y
 ```
 make -j$(nproc) deb-pkg
 sudo dpkg -i ../linux-headers-*.deb ../linux-image-*.deb
