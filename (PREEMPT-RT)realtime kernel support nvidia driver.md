@@ -1,7 +1,4 @@
-#### Q: ubuntu 20.04 & win 10 双系统时间不统一问题
-```
-timedatectl set-local-rtc 1 --adjust-system-clock
-```
+
 #### Q: ubuntu 20.04 安装实时内核
 
 1. **下载实时补丁以及对应内核并解压到桌面**
