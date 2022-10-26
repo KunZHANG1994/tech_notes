@@ -77,9 +77,10 @@ blacklist nouveau
 options nouveau modeset=0
 ```
 ##### d. Update kernel initramfs
+```bash
 sudo update-initramfs -u
 sudo reboot  # I'm not sure if needed
-
+```
 ##### e. Install driver!
 ```bash
 sudo IGNORE_PREEMPT_RT_PRESENCE=1 bash <*>.run  # Insert downloaded .run file
