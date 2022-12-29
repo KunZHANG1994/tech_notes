@@ -23,6 +23,7 @@ sudo apt-get install build-essential bc curl ca-certificates gnupg2 libssl-dev l
 
 #### 3. Add the patch and set configuraion
 ```bash
+xz -d *.xz
 tar xf linux-*.tar
 cd linux-*/
 patch -p1 < ../patch-*.patch
