@@ -1,4 +1,4 @@
-# How to compile OpenCV with NVIDIA GPU on ubuntu 20.04 Anaconda3
+# How to compile OpenCV with NVIDIA GPU in ubuntu 20.04 Anaconda3
 
 My recent work needs OpenCV DNN Module. But when you use `pip install opencv-python` to install the openCV, it will limited CPU-only inference use, FPS is very low. 
 
