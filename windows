@@ -1,0 +1,5 @@
+win11初次开机跳过联网激活方法
+1、首次进入Windows11家庭版系统并进行设置，到联网界面，按下【Shift+F10】快捷键（无效可试下【FN+Shfit+F10】）
+2、在出现的命令提示符页面输入OOBE\BYPASSNRO，按回车键，等待电脑重启完成
+3、重启后，在联网界面会有“我没有Internet连接”选项，点击此选项即可跳过联网
+原文链接：https://blog.csdn.net/jaray/article/details/130722929
