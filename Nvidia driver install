@@ -1,0 +1,7 @@
+ubuntu-drivers devices
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt-get update
+sudo apt-get install nvidia-driver-525 #此处数字要对应上面查询到的版本号
+sudo apt-get install mesa-common-dev
+sudo reboot
+nvidia-smi
